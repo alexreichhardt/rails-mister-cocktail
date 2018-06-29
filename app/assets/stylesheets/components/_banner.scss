@@ -1,8 +1,16 @@
 .home-banner {
   background-image: url('https://stmed.net/sites/default/files/flamingo-wallpapers-25472-2779785.jpg');
   background-size: cover;
-  height: 77vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-top: 40px;
+
+}
+
+.home-banner2 {
+  background-image: url('https://stmed.net/sites/default/files/flamingo-wallpapers-25472-2779785.jpg');
+  background-size: cover;
+  height: calc(100vh - 80px);
+  padding-top: 40px;
+
 }
