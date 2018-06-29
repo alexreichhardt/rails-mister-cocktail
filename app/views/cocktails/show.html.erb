@@ -1,10 +1,31 @@
 <h1>Cocktails#show</h1>
 
-<%= @cocktail.name %>
+  <div class="col-sm-8">
+    <div class="card-show">
+      <div class="text">
+        <h2><%=@cocktail.name %></h2>
+        <h3><i>Ingredients:</i></h3>
+        <% @doses.each do |dose|%>
+          <p><%= dose.ingredient.name %> - <%= dose.description %></p>
+        <% end %>
+        <% @reviews.each do |review|%>
+          <p><%= review.username %></p>
+          <p><%= review.content %></p>
+          <% num = review.rating.to_i %>
+          <% num.times do %>
+            <i class="fas fa-star"></i>
+          <%end%>
+          <% 5 - num.times do %>
+            <i class="far fa-star"></i>
+          <%end%>
+        <% end %>
+        <%= link_to("Add a new dose", new_cocktail_dose_path(@cocktail),  class: "btn-fnt") %>
+        <%= link_to("Back to all cocktails", cocktails_path,  class: "btn-fnt") %>
+        <%= link_to("Add a review", new_cocktail_review_path(@cocktail),  class: "btn-fnt") %>
+      </div>
+    </div>
+  </div>
 
-<% @doses.each do |dose|%>
- <%= dose.description %>
- <%= Ingredient.find(dose.ingredient_id).name %>
-<% end %>
+
 
 
