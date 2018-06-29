@@ -1,5 +1,5 @@
 
-<%= form_for(cocktail) do |f| %>
+<%= simple_form_for(cocktail) do |f| %>
    <% if cocktail.errors.any? %>
     <div class="errors-container">
       <ul>
@@ -11,6 +11,7 @@
   <% end %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-primary"%>
 <% end %>

@@ -8,9 +8,7 @@
               <h2><%=cocktail.name %></h2>
             </div>
             <div class="btns">
-              <div class="my-btn">
-                <i class="fas fa-search btn-icn"></i><%= link_to("Show", cocktail_path(cocktail), class: "btn-fnt") %>
-              </div>
+              <%= link_to('<i class="fas fa-search"></i> Show'.html_safe, cocktail_path(cocktail),  class: "btn-fnt") %>
             </div>
           </div>
         </div>
