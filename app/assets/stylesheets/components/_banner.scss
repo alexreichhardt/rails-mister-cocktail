@@ -1,9 +1,54 @@
+.home-banner-start {
+  background-image: url('https://stmed.net/sites/default/files/flamingo-wallpapers-25472-2779785.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: calc(100vh - 110px);
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+
+  h2 {
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+  }
+}
+
 .home-banner {
   background-image: url('https://stmed.net/sites/default/files/flamingo-wallpapers-25472-2779785.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-top: 40px;
-  height: calc(100vh - 130px);
 }
 
+.home-banner-pages {
+  background-image: url('https://stmed.net/sites/default/files/flamingo-wallpapers-25472-2779785.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: calc(100vh - 190px);
+}
+
+#banner-typed-text {
+  font-size: 50px;
+  font-family: 'Lobster', cursive;
+}
+
+#header {
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.home-text {
+  text-align: center;
+  background-color: rgba(250, 250, 250, 0.9);
+  padding: 20px;
+  border-radius: 4px;
+  width: 80%
+}

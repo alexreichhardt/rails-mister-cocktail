@@ -3,3 +3,9 @@ require_relative 'application'
 
 # Initialize the Rails application.
 Rails.application.initialize!
+
+Rails.application.configure do
+  # [...]
+  config.assets.debug = true # Switch to false, reload server, look at source.
+  # [...]
+end

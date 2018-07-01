@@ -1,52 +1,48 @@
-
-
-
-
-<div class="card-show">
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="text">
-        <div class="cocktail-name">
-        <h2><%=@cocktail.name %></h2>
-        </div>
-        <h3><i>Ingredients:</i></h3>
-        <% @doses.each do |dose|%>
-        <p><%= dose.ingredient.name %> - <%= dose.description %></p>
-        <% end %>
-        <h3><i>Reviews:</i></h3>
-        <% @reviews.each do |review|%>
-        <p><%= review.username %></p>
-        <p class = "thin"><i>"<%= review.content %>"<i></p>
-          <% num = review.rating.to_i %>
-          <% num.times do %>
-          <i class="fas fa-star"></i>
-          <%end%>
-          <% (5 - num).times do %>
-          <i class="far fa-star"></i>
-          <%end%>
+<div class="home-banner-pages">
+  <div class="card-show">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="text">
+          <div class="cocktail-name">
+          <h2><%=@cocktail.name %></h2>
+          </div>
+          <h3><i>Ingredients:</i></h3>
+          <% @doses.each do |dose|%>
+          <p><%= dose.ingredient.name %> - <%= dose.description %></p>
           <% end %>
-          <div class= "btns-all ">
-            <div class = "btns">
-              <%= link_to('<i class="fas fa-plus"></i> Add a new Ingredient'.html_safe, new_cocktail_dose_path(@cocktail),  class: "btn-fnt") %>
-            </div>
-            <div class = "btns">
-              <%= link_to('<i class="far fa-edit"></i> Add a new Review'.html_safe, new_cocktail_review_path(@cocktail),  class: "btn-fnt") %>
-            </div>
-            <div class = "btns">
-              <%= link_to('<i class="fas fa-undo"></i> Return to all Cocktails'.html_safe, cocktails_path,  class: "btn-fnt") %>
+          <h3><i>Reviews:</i></h3>
+          <% @reviews.each do |review|%>
+          <p><%= review.username %></p>
+          <p class = "thin"><i>"<%= review.content %>"<i></p>
+            <% num = review.rating.to_i %>
+            <% num.times do %>
+            <i class="fas fa-star"></i>
+            <%end%>
+            <% (5 - num).times do %>
+            <i class="far fa-star"></i>
+            <%end%>
+            <% end %>
+            <div class= "btns-all ">
+              <div class = "btns">
+                <%= link_to('<i class="fas fa-plus"></i> Add a new Ingredient'.html_safe, new_cocktail_dose_path(@cocktail),  class: "btn-fnt") %>
+              </div>
+              <div class = "btns">
+                <%= link_to('<i class="far fa-edit"></i> Add a new Review'.html_safe, new_cocktail_review_path(@cocktail),  class: "btn-fnt") %>
+              </div>
+              <div class = "btns">
+                <%= link_to('<i class="fas fa-undo"></i> Return to all Cocktails'.html_safe, cocktails_path,  class: "btn-fnt") %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-6">
-        <div>
-          <%= cl_image_tag @cocktail.photo, crop: :fill %>
+        <div class="col-sm-6">
+          <div>
+            <%= cl_image_tag @cocktail.photo, crop: :fill %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
 
 
