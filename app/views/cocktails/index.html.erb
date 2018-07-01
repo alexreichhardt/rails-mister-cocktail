@@ -2,48 +2,45 @@
   <div class="row">
     <div class="home-banner-start">
       <div class="home-text">
-      <h2>Your favorite Cocktail - one click away</h2>
-      <h2>
-        <span id="banner-typed-text"></span>
-      </h2>
-
-      <div class="btns-home">
-        <a href="#top" class= "btn-landing">All Cocktails</a>
-        <%= link_to("Create Cocktail", new_cocktail_path, target: "_blank", class: "btn-landing") %>
+        <h2>Your favorite Cocktail - one click away</h2>
+        <h2>
+          <span id="banner-typed-text"></span>
+        </h2>
+        <div class="btns-home">
+          <a href="#top" class= "btn-landing">All Cocktails</a>
+          <%= link_to("Create Cocktail", new_cocktail_path, target: "_blank", class: "btn-landing") %>
+        </div>
       </div>
-
     </div>
-</div>
     <div class="header">
-    <h2 id="header">All Cocktails</h2>
+      <h2 id="header">All Cocktails</h2>
     </div>
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-6 col-md-3" id="top">
-        <div class="card" style="background-image: linear-gradient(rgba(240,240,240,0.8), rgba(240, 240,240,0.8)), url(<%= cl_image_path cocktail.photo, crop: :fill %>) ;">
-          <div class="content-visible">
-              <h2><%=cocktail.name %></h2>
-            <div class="content-hover">
-              <h2><%=cocktail.name %></h2>
-              <%@reviews = Review.where(cocktail_id: cocktail[:id])%>
-              <% @reviews.each do |review|%>
-              <p><%= review.username %></p>
-              <p class = "thin"><i>"<%= review.content %>"</i></p>
-              <% num = review.rating.to_i %>
-                <% num.times do %>
-                <i class="fas fa-star"></i>
-                <%end%>
-                <% (5 - num).times do %>
-                <i class="far fa-star"></i>
-                <%end%>
-              <% end %>
-              <div class="btns">
-                <%= link_to('<i class="fas fa-search"></i> Show'.html_safe, cocktail_path(cocktail),  class: "btn-fnt") %>
-              </div>
+    <div class="col-xs-12 col-sm-6 col-md-3" id="top">
+      <div class="card" style="background-image: linear-gradient(rgba(240,240,240,0.8), rgba(240, 240,240,0.8)), url(<%= cl_image_path cocktail.photo, crop: :fill %>) ;">
+        <div class="content-visible">
+          <h2><%=cocktail.name %></h2>
+          <div class="content-hover">
+            <h2><%=cocktail.name %></h2>
+            <%@reviews = Review.where(cocktail_id: cocktail[:id])%>
+            <% @reviews.each do |review|%>
+            <p><%= review.username %></p>
+            <p class = "thin"><i>"<%= review.content %>"</i></p>
+            <% num = review.rating.to_i %>
+            <% num.times do %>
+            <i class="fas fa-star"></i>
+            <%end%>
+            <% (5 - num).times do %>
+            <i class="far fa-star"></i>
+            <%end%>
+            <% end %>
+            <div class="btns">
+              <%= link_to('<i class="fas fa-search"></i> Show'.html_safe, cocktail_path(cocktail),  class: "btn-fnt") %>
             </div>
           </div>
         </div>
-
       </div>
+    </div>
     <% end %>
   </div>
 </div>

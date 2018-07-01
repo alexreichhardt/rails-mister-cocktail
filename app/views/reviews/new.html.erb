@@ -1,17 +1,19 @@
-<div class="form-box">
-  <%= simple_form_for [@cocktail, @review] do |f| %>
-   <% if @review.errors.any? %>
-      <div class="errors-container">
-        <ul>
-          <% @review.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
+<div class="home-banner-pages">
+  <div class="form-box">
+    <%= simple_form_for [@cocktail, @review] do |f| %>
+     <% if @review.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.input :username %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: 1..5 %>
+      <%= f.submit "Add a review", class: "btn-fnt" %>
     <% end %>
-    <%= f.input :username %>
-    <%= f.input :content %>
-    <%= f.input :rating, collection: 1..5 %>
-    <%= f.submit "Add a review", class: "btn-fnt" %>
-  <% end %>
+  </div>
 </div>
