@@ -13,6 +13,7 @@
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
+
 }
 
 /* User Avatar */
@@ -77,5 +78,13 @@
 }
 
 #green {
-  color: #94e8d3;
+  color: #333333;
+  margin-left: 20px;
+  opacity: 0.6;
+  &:hover {
+    color: #94e8d3;
+
+  }
 }
+
+

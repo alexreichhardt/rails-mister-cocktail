@@ -14,3 +14,6 @@ Ingredient.create(name: "Orange Juice")
 Ingredient.create(name: "Limon")
 Ingredient.create(name: "Coca-Cola")
 
+
+
+

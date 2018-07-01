@@ -1,8 +1,14 @@
+
+
+
+
 <div class="card-show">
   <div class="row">
     <div class="col-sm-6">
       <div class="text">
+        <div class="cocktail-name">
         <h2><%=@cocktail.name %></h2>
+        </div>
         <h3><i>Ingredients:</i></h3>
         <% @doses.each do |dose|%>
         <p><%= dose.ingredient.name %> - <%= dose.description %></p>
